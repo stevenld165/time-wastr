@@ -20,6 +20,7 @@ builder.Services.AddIdentityApiEndpoints<User>().AddEntityFrameworkStores<TimeWa
 
 builder.Services.AddScoped<IActivityService, ActivityService>();
 builder.Services.AddScoped<IIngredientService, IngredientService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
