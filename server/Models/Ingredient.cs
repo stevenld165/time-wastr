@@ -2,7 +2,7 @@ using System;
 
 namespace server.Models;
 
-public class Ingredient
+public class Ingredient : IUserOwned
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;

@@ -1,6 +1,6 @@
 namespace server.Models;
 
-public class Activity
+public class Activity : IUserOwned
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;

@@ -2,7 +2,7 @@ using System;
 
 namespace server.Models;
 
-public class Category
+public class Category : IUserOwned
 {
     public int Id { get; set; }
 

@@ -18,4 +18,18 @@ public static class IngredientMapper
             UserId = ingredientModel.UserId,
         };
     }
+
+    public static Ingredient ToIngredientFromCreateDto(
+        this CreateIngredientDto createDto,
+        string userId
+    )
+    {
+        return new Ingredient
+        {
+            Name = createDto.Name,
+            Icon = createDto.Icon,
+            Color = createDto.Color,
+            UserId = userId,
+        };
+    }
 }

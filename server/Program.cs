@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using server.Data;
+using server.Interfaces;
 using server.Models;
+using server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,9 @@ builder.Services.AddDbContext<TimeWastrDbContext>(options => options.UseNpgsql(c
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<User>().AddEntityFrameworkStores<TimeWastrDbContext>();
+
+builder.Services.AddScoped<IActivityService, ActivityService>();
+builder.Services.AddScoped<IIngredientService, IngredientService>();
 
 var app = builder.Build();
 
